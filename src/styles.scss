@@ -1,6 +1,9 @@
-$primary: #6C63FF;
-$secondary: #FF6C63;
-$tertiary: #63FF6C;
-$black: #212121;
-$white: #FFFFF8;
+@import 'assets/styles/colors.scss';
+* {
+  box-sizing: border-box;
+  outline: none;
+}
 
+body {
+  margin: 0;
+}

@@ -31,7 +31,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/hamburgers/_sass/hamburgers/hamburgers.scss"
             ],
             "scripts": []
           },
@@ -127,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "travely"
+  "defaultProject": "travely",
+  "cli": {
+    "analytics": "a34eb07f-ead4-46ce-b3a5-211439caaefb"
+  }
 }

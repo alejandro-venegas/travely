@@ -1,0 +1,12 @@
+<img id="logo" src="./assets/images/logo200x200.png" alt="logo" />
+<div
+  class="hamburger hamburger--collapse"
+  appMenu
+  [isActive]="isMenuActive"
+  (click)="toggleMenu()"
+>
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</div>
+<nav appMenu [isActive]="isMenuActive"></nav>

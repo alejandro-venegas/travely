@@ -1,0 +1,17 @@
+:host {
+    display: grid;
+    grid-template-areas:
+        'hd'
+        'mn'
+        'ft';
+}
+
+header {
+    grid-area: hd;
+}
+main {
+    grid-area: mn;
+}
+footer {
+    grid-area: ft;
+}
