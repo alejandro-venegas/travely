@@ -1,9 +1,33 @@
 @import 'assets/styles/colors.scss';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 * {
   box-sizing: border-box;
   outline: none;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 body {
   margin: 0;
+}
+
+a{
+
+  text-decoration: none;
+}
+
+.button{
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: solid 1.5px $white;
+  color: $white;
+}
+
+.button--primary{
+  border-color: $primary;
+  background-color: $primary;
+}
+
+.button--primary-outlined{
+  border-color: $primary;
+  color: $primary
 }

@@ -1,12 +1,25 @@
-<img id="logo" src="./assets/images/logo200x200.png" alt="logo" />
+<h1 aria-label="Travely"><img id="logo" src="./assets/images/logo200x200.png" alt="logo" /></h1>
 <div
   class="hamburger hamburger--arrow-r"
   appMenu
   [isActive]="isMenuActive"
   (click)="toggleMenu()"
+  aria-label="Toggle main menu"
 >
-  <span class="hamburger-box">
+  <span class="hamburger-box" aria-hidden="true">
     <span class="hamburger-inner"></span>
   </span>
 </div>
-<nav appMenu [isActive]="isMenuActive"></nav>
+<nav appMenu [isActive]="isMenuActive">
+
+  <ul>
+    <li><a class="main-nav--item" href="">Home</a></li>
+    <li><a class="main-nav--item" href="">About</a></li>
+    <li><a class="main-nav--item" href="">Support</a></li>
+    <li>
+        <a class="button button--primary-outlined">Sign In</a>
+        <a class="button button--primary">Create Account</a>
+
+    </li>
+  </ul>
+</nav>

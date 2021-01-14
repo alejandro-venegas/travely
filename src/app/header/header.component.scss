@@ -11,9 +11,11 @@
 #logo {
   width: 3rem;
 
+
+}
+h1{
   z-index: 100000;
 }
-
 .hamburger {
   .hamburger-box {
     width: 30px;
@@ -51,8 +53,7 @@
 }
 
 nav {
-  display: flex;
-  flex-direction: column;
+
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -60,7 +61,40 @@ nav {
   right: -100vw;
   background-color: $black;
   transition: right 0.5s ease-out;
+
   &.is-active {
-    right: 0vw;
+    right: 0;
+  }
+  ul{
+    height: 100%;
+
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: $header-height 0 0 0;
+
+    li{
+
+      .main-nav--item{
+        display: inline-block;
+        padding: 1rem 2rem;
+        width: 100vw;
+        color: white;
+        font-size: 2rem;
+      }
+    }
+    li:last-child{
+      margin-top: auto;
+      padding: 1rem;
+      justify-content: space-evenly;
+      display: flex;
+
+      .button{
+        text-align: center;
+        width: 45%;
+        padding: 1rem 0;
+      }
+    }
   }
 }
