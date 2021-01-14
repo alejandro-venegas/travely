@@ -1,16 +1,28 @@
+@import 'src/assets/styles/colors.scss';
+@import 'src/assets/styles/sizes.scss';
 :host {
     display: grid;
     grid-template-areas:
         'hd'
         'mn'
         'ft';
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100vh;
+
+
 }
 
 header {
     grid-area: hd;
+  position: fixed;
+  top: 0;
 }
 main {
     grid-area: mn;
+    padding-top: $header-height;
+    min-height: 100vh;
 }
 footer {
     grid-area: ft;
