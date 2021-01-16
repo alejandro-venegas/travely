@@ -1,0 +1,35 @@
+@import './src/assets/styles/sizes';
+@import './src/assets/styles/colors';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+
+//TODO: Refactor this CSS file
+:host {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#hero {
+  //background-position: top center;
+  left: 0;
+  width: 100vw;
+  img {
+    width: 100%;
+  }
+
+  color: $black;
+  h1 {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 1rem 2rem;
+    font-size: 2.5rem;
+  }
+  p {
+    margin: 1rem 2rem;
+    font-size: 1.5rem;
+  }
+}
+#hero--button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

@@ -1,0 +1,23 @@
+@import './src/assets/styles/sizes';
+@import './src/assets/styles/colors';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+:host {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: $black;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 0 2rem 1rem;
+  font-size: 2.5rem;
+}
+p {
+  margin: 1rem 2rem;
+  font-size: 1.5rem;
+}

@@ -13,12 +13,12 @@
 <nav appMenu [isActive]="isMenuActive">
 
   <ul>
-    <li><a class="main-nav--item" href="">Home</a></li>
-    <li><a class="main-nav--item" href="">About</a></li>
-    <li><a class="main-nav--item" href="">Support</a></li>
+    <li><a class="main-nav--item" (click)="toggleMenu()" href="">Home</a></li>
+    <li><a class="main-nav--item" (click)="toggleMenu()" href="">About</a></li>
+    <li><a class="main-nav--item" (click)="toggleMenu()" href="">Support</a></li>
     <li>
-        <a class="button button--primary-outlined">Sign In</a>
-        <a class="button button--primary">Create Account</a>
+        <a class="button button--primary-outlined" (click)="toggleMenu()" routerLink="/log-in">Log In</a>
+        <a class="button button--primary" (click)="toggleMenu()" routerLink="/sign-up">Create Account</a>
 
     </li>
   </ul>
