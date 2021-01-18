@@ -1,10 +1,7 @@
 import {
   AfterContentInit,
-  ContentChild,
   Directive,
-  ElementRef,
-  Input,
-  ViewChild,
+  ElementRef, Input,
 } from '@angular/core';
 
 @Directive({
@@ -12,6 +9,7 @@ import {
   exportAs: 'typingAnimation',
 })
 export class TypingAnimationDirective implements AfterContentInit {
+  @Input() appTypingAnimation = false;
   private stringArray: string[] = [];
 
   runningAnimationTimeout = setTimeout(() => {}, 0);
@@ -19,11 +17,13 @@ export class TypingAnimationDirective implements AfterContentInit {
   constructor(private element: ElementRef) {}
 
   ngAfterContentInit(): void {
-    const nativeElement = this.element.nativeElement;
-    const text: string = nativeElement.innerHTML;
-    nativeElement.innerHTML = '';
-    this.stringArray = text.split('');
-    this.animateString();
+    if (this.appTypingAnimation) {
+      const nativeElement = this.element.nativeElement;
+      const text: string = nativeElement.innerHTML;
+      nativeElement.innerHTML = '';
+      this.stringArray = text.split('');
+      this.animateString();
+    }
   }
 
   animateString(): void {

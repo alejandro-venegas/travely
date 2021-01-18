@@ -1,5 +1,5 @@
 <section>
-  <h1 appTypingAnimation>{{ title }}</h1>
+  <h1 [appTypingAnimation]="isHero">{{ title }}</h1>
   <img [src]="src" alt="" />
   <p>{{ text }}</p>
   <ng-content></ng-content>
