@@ -8,14 +8,16 @@
     'ft';
 
   overflow-x: hidden;
-  overflow-y: scroll;
+  grid-auto-rows: minmax(min-content, max-content);
+  height: 100vh;
 }
 
 header {
   grid-area: hd;
   position: fixed;
   top: 0;
-  z-index: 100000;
+  z-index: 10;
+  height: auto;
 }
 main {
   grid-area: mn;
@@ -23,7 +25,10 @@ main {
   min-height: 100vh;
 }
 footer {
-  top: 0;
+  bottom: 0;
+  position: -webkit-sticky;
   position: sticky;
   grid-area: ft;
+  z-index: -1;
+  background-color: #6c63ff;
 }

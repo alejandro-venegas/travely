@@ -8,26 +8,26 @@
 
 body {
   margin: 0;
+  height: 100vh;
 }
 
-a{
-
+a {
   text-decoration: none;
 }
 
-.button{
+.button {
   padding: 1rem 2rem;
   border-radius: 1rem;
   border: solid 1.5px $white;
   color: $white;
 }
 
-.button--primary{
+.button--primary {
   border-color: $primary;
   background-color: $primary;
 }
 
-.button--primary-outlined{
+.button--primary-outlined {
   border-color: $primary;
-  color: $primary
+  color: $primary;
 }
