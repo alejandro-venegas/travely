@@ -7,14 +7,11 @@
   width: 100vw;
   height: $header-height;
   padding: 1rem;
-
 }
 #logo {
   width: 3rem;
-
-
 }
-h1{
+h1 {
   z-index: 100000;
   margin: 0;
 }
@@ -29,7 +26,6 @@ h1{
   top: 50%;
   transform: translateY(-50%);
 
-
   .hamburger-inner::before {
     top: -6px;
   }
@@ -37,11 +33,13 @@ h1{
     top: 6px;
   }
 
-  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after {
     transition: transform 0.15s ease, background-color 0.5s ease;
     width: 30px;
     height: 3px;
-    background-color: $black;
+    background-color: white;
     border-radius: 3px;
   }
 
@@ -55,7 +53,6 @@ h1{
 }
 
 nav {
-
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -67,7 +64,7 @@ nav {
   &.is-active {
     right: 0;
   }
-  ul{
+  ul {
     height: 100%;
 
     margin: 0;
@@ -76,9 +73,8 @@ nav {
     list-style: none;
     padding: $header-height 0 0 0;
 
-    li{
-
-      .main-nav--item{
+    li {
+      .main-nav--item {
         display: inline-block;
         padding: 1rem 2rem;
         width: 100vw;
@@ -86,13 +82,13 @@ nav {
         font-size: 2rem;
       }
     }
-    li:last-child{
+    li:last-child {
       margin-top: auto;
       padding: 1rem;
       justify-content: space-evenly;
       display: flex;
 
-      .button{
+      .button {
         text-align: center;
         width: 45%;
         padding: 1rem 0;

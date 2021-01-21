@@ -18,6 +18,11 @@ header {
   top: 0;
   z-index: 10;
   height: auto;
+  mix-blend-mode: difference;
+
+  &.menu-active {
+    mix-blend-mode: normal;
+  }
 }
 main {
   grid-area: mn;
