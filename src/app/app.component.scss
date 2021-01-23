@@ -12,17 +12,12 @@
   height: 100vh;
 }
 
-header {
+app-header {
   grid-area: hd;
   position: fixed;
   top: 0;
   z-index: 10;
   height: auto;
-  mix-blend-mode: difference;
-
-  &.menu-active {
-    mix-blend-mode: normal;
-  }
 }
 main {
   grid-area: mn;
@@ -31,7 +26,7 @@ main {
   min-height: 100vh;
   box-shadow: 0 10px 8px 2px rgba(0, 0, 0, 0.2);
 }
-footer {
+app-footer {
   bottom: 0;
   position: -webkit-sticky;
   position: sticky;

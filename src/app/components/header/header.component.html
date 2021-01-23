@@ -1,37 +1,41 @@
-<h1 aria-label="Travely">
-  <img id="logo" src="../../../assets/images/logo200x200.png" alt="logo" />
-</h1>
-<div
-  class="hamburger hamburger--arrow-r"
-  appMenu
-  [isActive]="isMenuActive"
-  (click)="toggleMenu()"
-  aria-label="Toggle main menu"
->
-  <span class="hamburger-box" aria-hidden="true">
-    <span class="hamburger-inner"></span>
-  </span>
-</div>
-<nav appMenu [isActive]="isMenuActive">
-  <ul>
-    <li><a class="main-nav--item" (click)="toggleMenu()" href="">Home</a></li>
-    <li><a class="main-nav--item" (click)="toggleMenu()" href="">About</a></li>
-    <li>
-      <a class="main-nav--item" (click)="toggleMenu()" href="">Support</a>
-    </li>
-    <li>
-      <a
-        class="button button--primary-outlined"
-        (click)="toggleMenu()"
-        routerLink="/log-in"
-        >Log In</a
-      >
-      <a
-        class="button button--primary"
-        (click)="toggleMenu()"
-        routerLink="/sign-up"
-        >Create Account</a
-      >
-    </li>
-  </ul>
-</nav>
+<header>
+  <h1 aria-label="Travely">
+    <img id="logo" src="../../../assets/images/logo200x200.png" alt="logo" />
+  </h1>
+  <div
+    class="hamburger hamburger--arrow-r"
+    appMenu
+    [isActive]="isMenuActive"
+    (click)="toggleMenu()"
+    aria-label="Toggle main menu"
+  >
+    <span class="hamburger-box" aria-hidden="true">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+  <nav appMenu [isActive]="isMenuActive">
+    <ul>
+      <li><a class="main-nav--item" (click)="toggleMenu()" href="">Home</a></li>
+      <li>
+        <a class="main-nav--item" (click)="toggleMenu()" href="">About</a>
+      </li>
+      <li>
+        <a class="main-nav--item" (click)="toggleMenu()" href="">Support</a>
+      </li>
+      <li>
+        <a
+          class="button button--primary-outlined"
+          (click)="toggleMenu()"
+          routerLink="/log-in"
+          >Log In</a
+        >
+        <a
+          class="button button--primary"
+          (click)="toggleMenu()"
+          routerLink="/sign-up"
+          >Create Account</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>

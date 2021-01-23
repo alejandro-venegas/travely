@@ -1,12 +1,15 @@
 @import '../../../assets/styles/colors';
 @import '../../../assets/styles/sizes';
+
 :host {
+  mix-blend-mode: difference;
+}
+header {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: $header-height;
-  padding: 1rem;
 }
 #logo {
   width: 3rem;
