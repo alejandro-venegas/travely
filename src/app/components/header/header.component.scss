@@ -39,7 +39,7 @@ h1 {
   .hamburger-inner,
   .hamburger-inner::before,
   .hamburger-inner::after {
-    transition: transform 0.15s ease, background-color 0.5s ease;
+    transition: transform 0.5s ease, background-color 0.5s ease;
     width: 30px;
     height: 3px;
     background-color: white;

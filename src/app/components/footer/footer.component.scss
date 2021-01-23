@@ -1,0 +1,24 @@
+@import 'src/assets/styles/colors.scss';
+:host {
+  padding: 2rem;
+
+  span {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    font-size: 0.7rem;
+  }
+  a {
+    margin: 1rem;
+  }
+
+  * {
+    color: $white;
+  }
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
