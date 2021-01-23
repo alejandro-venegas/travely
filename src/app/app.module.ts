@@ -12,6 +12,7 @@ import { LogInComponent } from './pages/log-in/log-in.component';
 import { LandingSectionComponent } from './pages/landing-page/components/landing-section/landing-section.component';
 
 import { TypingAnimationDirective } from './shared/directives/typing-animation.directive';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,8 @@ import { TypingAnimationDirective } from './shared/directives/typing-animation.d
     LandingSectionComponent,
 
     TypingAnimationDirective,
+
+    NavComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

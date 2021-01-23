@@ -31,3 +31,37 @@ a {
   border-color: $primary;
   color: $primary;
 }
+
+@media only screen and (max-width: 768px) {
+  .medium-devices--only {
+    display: none !important;
+  }
+  .large-devices--only {
+    display: none !important;
+  }
+  .medium-devices--up {
+    display: none !important;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .small-devices--only {
+    display: none !important;
+  }
+  .large-devices--only {
+    display: none !important;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .small-devices--only {
+    display: none !important;
+  }
+  .medium-devices--only {
+    display: none !important;
+  }
+  .medium-devices--down {
+    display: none !important;
+  }
+}
