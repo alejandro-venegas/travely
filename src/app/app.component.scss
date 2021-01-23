@@ -1,6 +1,7 @@
 @import 'src/assets/styles/colors.scss';
 @import 'src/assets/styles/sizes.scss';
 :host {
+  position: relative;
   display: grid;
   grid-template-areas:
     'hd'
@@ -33,4 +34,50 @@ app-footer {
   grid-area: ft;
   z-index: -1;
   background-color: #6c63ff;
+}
+
+nav {
+  z-index: 1;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  right: -100vw;
+  background-color: $black;
+  transition: right 0.5s ease-out;
+
+  &.is-active {
+    right: 0;
+  }
+  ul {
+    height: 100%;
+
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: $header-height 0 0 0;
+
+    li {
+      .main-nav--item {
+        display: inline-block;
+        padding: 1rem 2rem;
+        width: 100vw;
+        color: white;
+        font-size: 2rem;
+      }
+    }
+    li:last-child {
+      margin-top: auto;
+      padding: 1rem;
+      justify-content: space-evenly;
+      display: flex;
+
+      .button {
+        text-align: center;
+        width: 45%;
+        padding: 1rem 0;
+      }
+    }
+  }
 }
