@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MenuService } from '../../services/menu.service';
 
 @Component({
   selector: 'app-header',
@@ -6,14 +7,13 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  isMenuActive = false;
-  @Output() menuActivated = new EventEmitter<boolean>();
-  constructor() {}
+  constructor(private menuService: MenuService) {}
 
   ngOnInit(): void {}
 
-  toggleMenu(): void {
-    this.isMenuActive = !this.isMenuActive;
-    this.menuActivated.emit(this.isMenuActive);
+  onToggleMenu(): void {
+    this.menuService.isMenuActiveSubject.next(
+      !this.menuService.isMenuActiveSubject.getValue()
+    );
   }
 }

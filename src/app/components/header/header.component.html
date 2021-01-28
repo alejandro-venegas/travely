@@ -1,15 +1,19 @@
 <header>
   <h1 aria-label="Travely">
-    <img id="logo" src="../../../assets/images/logo200x200.png" alt="logo" />
+    <img
+      id="logo"
+      src="../../../assets/images/logo200x200.png"
+      alt="logo"
+      aria-hidden="true"
+    />
   </h1>
   <div
-    class="hamburger hamburger--arrow-r"
+    class="hamburger hamburger--arrow-r medium-devices--down"
     appMenu
-    [isActive]="isMenuActive"
-    (click)="toggleMenu()"
+    (click)="onToggleMenu()"
     aria-label="Toggle main menu"
   >
-    <span class="hamburger-box medium-devices--down" aria-hidden="true">
+    <span class="hamburger-box" aria-hidden="true">
       <span class="hamburger-inner"></span>
     </span>
   </div>

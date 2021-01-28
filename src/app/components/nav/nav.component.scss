@@ -1,0 +1,50 @@
+@import 'src/assets/styles/colors';
+@import 'src/assets/styles/sizes';
+:host {
+}
+nav {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  &.is-active {
+    right: 0;
+  }
+  right: -100vw;
+  transition: right 0.5s ease-out;
+  height: 100vh;
+  width: 100vw;
+
+  background-color: $black;
+
+  ul {
+    height: 100%;
+
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: $header-height 0 0 0;
+
+    li {
+      .main-nav--item {
+        display: inline-block;
+        padding: 1rem 2rem;
+        width: 100vw;
+        color: white;
+        font-size: 2rem;
+      }
+    }
+    li:last-child {
+      margin-top: auto;
+      padding: 1rem;
+      justify-content: space-evenly;
+      display: flex;
+
+      .button {
+        text-align: center;
+        width: 45%;
+        padding: 1rem 0;
+      }
+    }
+  }
+}
