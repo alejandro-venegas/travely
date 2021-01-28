@@ -3,6 +3,7 @@
 :host {
   position: relative;
   display: grid;
+  background-color: $white;
   grid-template-areas:
     'hd'
     'mn'
@@ -15,14 +16,13 @@
 
 app-header {
   grid-area: hd;
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 10;
   height: auto;
 }
 main {
   grid-area: mn;
-  padding-top: $header-height;
   background-color: $white;
   min-height: 100vh;
   box-shadow: 0 10px 8px 2px rgba(0, 0, 0, 0.2);
