@@ -1,14 +1,22 @@
 @import './src/assets/styles/sizes';
 @import './src/assets/styles/colors';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
-
+:host {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 section {
   position: relative;
   display: flex;
   flex-direction: column;
   color: inherit;
 }
-
+.section__info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 img {
   width: 100%;
 }
@@ -21,4 +29,23 @@ h1 {
 p {
   margin: 1rem 3rem 1rem 2rem;
   font-size: 1.5rem;
+}
+
+@media only screen and (min-width: $tablet-breakpoint) {
+  :host {
+    min-height: calc(100vh - #{$header-height});
+    &:nth-of-type(even) {
+      section {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+  section {
+    flex-direction: row;
+    width: 90%;
+    max-width: 60rem;
+  }
+  img {
+    width: 50%;
+  }
 }

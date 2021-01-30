@@ -20,10 +20,11 @@ header {
   color: $white;
   display: flex;
   align-items: center;
+  .title__text {
+    margin-left: 2rem;
+  }
 }
-.title__text {
-  margin-left: 2rem;
-}
+
 .hamburger {
   .hamburger-box {
     width: 30px;

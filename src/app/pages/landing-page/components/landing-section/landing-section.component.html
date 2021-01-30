@@ -1,6 +1,11 @@
 <section>
-  <h1 [appTypingAnimation]="isHero">{{ title }}</h1>
+  <h1 class="small-devices--only" [appTypingAnimation]="isHero">{{ title }}</h1>
   <img [src]="src" alt="" />
-  <p>{{ text }}</p>
-  <ng-content></ng-content>
+  <div class="section__info-container">
+    <h1 class="medium-devices--up" [appTypingAnimation]="isHero">
+      {{ title }}
+    </h1>
+    <p>{{ text }}</p>
+    <ng-content></ng-content>
+  </div>
 </section>
