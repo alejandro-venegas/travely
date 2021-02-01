@@ -33,7 +33,7 @@ p {
 
 @media only screen and (min-width: $tablet-breakpoint) {
   :host {
-    min-height: calc(100vh - #{$header-height});
+    min-height: $main-height;
     &:nth-of-type(even) {
       section {
         flex-direction: row-reverse;

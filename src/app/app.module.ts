@@ -12,7 +12,9 @@ import { LogInComponent } from './pages/log-in/log-in.component';
 import { LandingSectionComponent } from './pages/landing-page/components/landing-section/landing-section.component';
 
 import { TypingAnimationDirective } from './shared/directives/typing-animation.directive';
-import { NavComponent } from './components/nav/nav.component';
+import { NavComponent } from './shared/components/nav/nav.component';
+import { FormInputComponent } from './shared/components/form-input/form-input.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,8 +30,10 @@ import { NavComponent } from './components/nav/nav.component';
     TypingAnimationDirective,
 
     NavComponent,
+
+    FormInputComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

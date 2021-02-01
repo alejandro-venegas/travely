@@ -24,7 +24,7 @@ app-header {
 main {
   grid-area: mn;
   background-color: $white;
-  min-height: 100vh;
+  min-height: $main-height;
   box-shadow: 0 10px 8px 2px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }

@@ -1,1 +1,21 @@
-<p>sign-up works!</p>
+<section>
+  <h1>Create your account</h1>
+  <form #signUpForm="ngForm">
+    <app-form-input
+      ngModel
+      email
+      required
+      #email="ngModel"
+      name="email"
+      label="Email"
+    ></app-form-input>
+    <app-form-input
+      ngModel
+      #password="ngModel"
+      name="password"
+      label="Password"
+    ></app-form-input>
+  </form>
+  <span>{{ signUpForm.value | json }}</span>
+  <button class="button button--primary">Register</button>
+</section>

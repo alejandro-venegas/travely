@@ -1,0 +1,70 @@
+@import './src/assets/styles/colors';
+$transition-duration: 0.2s;
+$child-padding: 0.5rem 0;
+:host {
+  & > div {
+    width: 100%;
+    display: flex;
+    position: relative;
+    margin: 0.5rem 0;
+    padding: 0 0.5rem;
+    align-items: center;
+    height: 3rem;
+    border-radius: 0.5rem;
+    border: 2px lightgrey solid;
+    cursor: text;
+    transition: border-color $transition-duration ease;
+  }
+  &.ng-invalid.ng-touched {
+    .input-container {
+      border-color: red;
+      label {
+        color: red;
+      }
+      .separator-bar {
+        background-color: red;
+      }
+    }
+  }
+}
+* {
+  color: $black;
+}
+
+input {
+  border: none;
+  margin-left: 0.5rem;
+  background-color: $white;
+  min-width: 0;
+  font-size: 1rem;
+  flex: 1;
+}
+.separator-bar {
+  position: relative;
+  height: 3rem;
+  width: 2px;
+  margin: 0 0.5rem;
+  opacity: 0;
+  background-color: $primary;
+  transition: opacity $transition-duration ease;
+}
+.separator-bar.focused {
+  opacity: 1;
+}
+label {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%) scale(1.2);
+  color: grey;
+  font-size: 1rem;
+  transition: left $transition-duration ease,
+    transform $transition-duration ease, color $transition-duration ease;
+}
+label.focused {
+  left: 0;
+  transform: none;
+  color: $primary;
+}
+div.focused {
+  border-color: $primary;
+}
