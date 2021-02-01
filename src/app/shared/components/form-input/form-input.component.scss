@@ -2,11 +2,11 @@
 $transition-duration: 0.2s;
 $child-padding: 0.5rem 0;
 :host {
-  & > div {
+  display: block;
+  & > .input-container {
     width: 100%;
     display: flex;
     position: relative;
-    margin: 0.5rem 0;
     padding: 0 0.5rem;
     align-items: center;
     height: 3rem;
@@ -33,7 +33,6 @@ $child-padding: 0.5rem 0;
 
 input {
   border: none;
-  margin-left: 0.5rem;
   background-color: $white;
   min-width: 0;
   font-size: 1rem;
@@ -42,7 +41,7 @@ input {
 .separator-bar {
   position: relative;
   height: 3rem;
-  width: 2px;
+  width: 0.1rem;
   margin: 0 0.5rem;
   opacity: 0;
   background-color: $primary;
@@ -65,6 +64,6 @@ label.focused {
   transform: none;
   color: $primary;
 }
-div.focused {
+.input-container.focused {
   border-color: $primary;
 }
