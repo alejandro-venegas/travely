@@ -41,7 +41,7 @@ input {
 .separator-bar {
   position: relative;
   height: 3rem;
-  width: 0.1rem;
+  width: 0.15rem;
   margin: 0 0.5rem;
   opacity: 0;
   background-color: $primary;
@@ -56,8 +56,7 @@ label {
   transform: translateX(-50%) scale(1.2);
   color: grey;
   font-size: 1rem;
-  transition: left $transition-duration ease,
-    transform $transition-duration ease, color $transition-duration ease;
+  transition: all $transition-duration ease;
 }
 label.focused {
   left: 0;

@@ -46,6 +46,9 @@ p {
     max-width: 60rem;
   }
   img {
-    width: 50%;
+    flex: 2;
+  }
+  .section__info-container {
+    flex: 1.5;
   }
 }
