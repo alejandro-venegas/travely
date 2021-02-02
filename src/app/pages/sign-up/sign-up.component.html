@@ -1,6 +1,22 @@
 <section>
   <h1>Create your account</h1>
   <form #signUpForm="ngForm">
+    <div class="form--input-container">
+      <app-form-input
+        ngModel
+        required
+        #email="ngModel"
+        name="firstName"
+        label="First Name"
+      ></app-form-input>
+      <app-form-input
+        ngModel
+        required
+        #email="ngModel"
+        name="lastName"
+        label="Last Name"
+      ></app-form-input>
+    </div>
     <app-form-input
       ngModel
       email
@@ -8,13 +24,24 @@
       #email="ngModel"
       name="email"
       label="Email"
+      type="email"
     ></app-form-input>
-    <app-form-input
-      ngModel
-      #password="ngModel"
-      name="password"
-      label="Password"
-    ></app-form-input>
+    <div class="form--input-container">
+      <app-form-input
+        ngModel
+        #password="ngModel"
+        name="password"
+        label="Password"
+        type="password"
+      ></app-form-input>
+      <app-form-input
+        ngModel
+        #password="ngModel"
+        name="confirmPassword"
+        label="Confirm"
+        type="password"
+      ></app-form-input>
+    </div>
   </form>
   <button class="button button--primary">Register</button>
 </section>

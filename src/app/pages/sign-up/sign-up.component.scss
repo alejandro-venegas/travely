@@ -7,7 +7,7 @@
 }
 section {
   width: 100%;
-  max-width: 500px;
+  max-width: 40rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,4 +24,13 @@ button {
 }
 app-form-input {
   margin: 1rem 0;
+}
+@media only screen and (min-width: $tablet-breakpoint) {
+  .form--input-container {
+    display: flex;
+
+    app-form-input:first-of-type {
+      margin-right: 1rem;
+    }
+  }
 }

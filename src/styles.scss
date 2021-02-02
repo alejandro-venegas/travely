@@ -35,7 +35,7 @@ a {
   font-weight: 600;
 }
 
-@media only screen and (max-width: $tablet-breakpoint) {
+@media only screen and (max-width: calc(#{$tablet-breakpoint} - 1px)) {
   .medium-devices--only {
     display: none !important;
   }
