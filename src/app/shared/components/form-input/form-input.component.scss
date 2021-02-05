@@ -3,6 +3,7 @@ $transition-duration: 0.2s;
 $child-padding: 0.5rem 0;
 :host {
   display: block;
+  position: relative;
   & > .input-container {
     width: 100%;
     display: flex;
@@ -30,7 +31,13 @@ $child-padding: 0.5rem 0;
 * {
   color: $black;
 }
-
+.error-container {
+  position: absolute;
+  bottom: -1.2rem;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+}
 input {
   border: none;
   background-color: $white;

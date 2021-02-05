@@ -15,6 +15,7 @@ import { TypingAnimationDirective } from './shared/directives/typing-animation.d
 import { NavComponent } from './shared/components/nav/nav.component';
 import { FormInputComponent } from './shared/components/form-input/form-input.component';
 import { FormsModule } from '@angular/forms';
+import { SameStringValidatorDirective } from './shared/validators/same-string-validator.directive';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,8 @@ import { FormsModule } from '@angular/forms';
     NavComponent,
 
     FormInputComponent,
+
+    SameStringValidatorDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

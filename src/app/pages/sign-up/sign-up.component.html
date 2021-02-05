@@ -5,17 +5,25 @@
       <app-form-input
         ngModel
         required
-        #email="ngModel"
+        #firstName="ngModel"
         name="firstName"
         label="First Name"
-      ></app-form-input>
+      >
+        <strong *ngIf="firstName.touched && firstName.invalid"
+          >Please enter your first name.</strong
+        >
+      </app-form-input>
       <app-form-input
         ngModel
         required
-        #email="ngModel"
+        #lastName="ngModel"
         name="lastName"
         label="Last Name"
-      ></app-form-input>
+      >
+        <strong *ngIf="lastName.touched && lastName.invalid"
+          >Please enter your last name.</strong
+        >
+      </app-form-input>
     </div>
     <app-form-input
       ngModel
@@ -25,22 +33,37 @@
       name="email"
       label="Email"
       type="email"
-    ></app-form-input>
+    >
+      <strong *ngIf="email.touched && email.invalid"
+        >Please enter a valid email</strong
+      >
+    </app-form-input>
     <div class="form--input-container">
       <app-form-input
         ngModel
+        required
         #password="ngModel"
         name="password"
         label="Password"
         type="password"
-      ></app-form-input>
+        [minlength]="8"
+      >
+        <strong *ngIf="password.touched && password.invalid"
+          >Please enter a password longer than 8 characters</strong
+        >
+      </app-form-input>
       <app-form-input
         ngModel
-        #password="ngModel"
+        #confirmPassword="ngModel"
         name="confirmPassword"
         label="Confirm"
         type="password"
-      ></app-form-input>
+        [appSameStringValidator]="password.value"
+      >
+        <strong *ngIf="confirmPassword.touched && confirmPassword.invalid"
+          >Please enter the same password</strong
+        >
+      </app-form-input>
     </div>
   </form>
   <button class="button button--primary">Register</button>
