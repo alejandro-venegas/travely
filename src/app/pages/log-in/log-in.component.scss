@@ -1,0 +1,30 @@
+@import '../../../assets/styles/sizes.scss';
+@import '../../../assets/styles/colors.scss';
+:host {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+section {
+  width: 100%;
+  max-width: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  min-height: $main-height;
+  padding: 2rem;
+}
+button {
+  margin: 1rem;
+}
+h1 {
+  margin: 0;
+  text-align: center;
+}
+button {
+  align-self: center;
+}
+app-form-input {
+  margin: 2rem 0.5rem;
+}

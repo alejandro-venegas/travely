@@ -16,6 +16,8 @@ import { NavComponent } from './shared/components/nav/nav.component';
 import { FormInputComponent } from './shared/components/form-input/form-input.component';
 import { FormsModule } from '@angular/forms';
 import { SameStringValidatorDirective } from './shared/validators/same-string-validator.directive';
+import { HttpClientModule } from '@angular/common/http';
+import { UsedStringValidatorDirective } from './pages/sign-up/validators/used-string-validator.directive';
 
 @NgModule({
   declarations: [
@@ -35,8 +37,10 @@ import { SameStringValidatorDirective } from './shared/validators/same-string-va
     FormInputComponent,
 
     SameStringValidatorDirective,
+
+    UsedStringValidatorDirective,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

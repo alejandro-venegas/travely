@@ -1,6 +1,10 @@
 <section>
   <h1>Create your account</h1>
-  <form #signUpForm="ngForm">
+  <form
+    #signUpForm="ngForm"
+    id="sign-up-form"
+    (ngSubmit)="onSubmit(signUpForm)"
+  >
     <div class="form--input-container">
       <app-form-input
         ngModel
@@ -33,9 +37,13 @@
       name="email"
       label="Email"
       type="email"
+      [appUsedStringValidator]="usedEmails"
     >
-      <strong *ngIf="email.touched && email.invalid"
-        >Please enter a valid email</strong
+      <strong *ngIf="email.touched && email.invalid">
+        <ng-template [ngIf]="email.errors.usedString" [ngIfElse]="elseError"
+          >Email already exists!</ng-template
+        >
+        <ng-template #elseError>Please enter a valid email</ng-template></strong
       >
     </app-form-input>
     <div class="form--input-container">
@@ -66,5 +74,7 @@
       </app-form-input>
     </div>
   </form>
-  <button class="button button--primary">Register</button>
+  <button form="sign-up-form" type="submit" class="button button--primary">
+    Register
+  </button>
 </section>
