@@ -40,7 +40,7 @@
       [appUsedStringValidator]="usedEmails"
     >
       <strong *ngIf="email.touched && email.invalid">
-        <ng-template [ngIf]="email.errors.usedString" [ngIfElse]="elseError"
+        <ng-template [ngIf]="email?.errors?.usedString" [ngIfElse]="elseError"
           >Email already exists!</ng-template
         >
         <ng-template #elseError>Please enter a valid email</ng-template></strong
