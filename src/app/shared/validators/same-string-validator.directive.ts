@@ -1,4 +1,4 @@
-import { Directive, Input } from '@angular/core';
+import { Directive, Input, OnChanges, SimpleChanges } from '@angular/core';
 import {
   AbstractControl,
   NG_VALIDATORS,
@@ -22,9 +22,23 @@ export function sameString(str: string): ValidatorFn {
     },
   ],
 })
-export class SameStringValidatorDirective implements Validator {
+export class SameStringValidatorDirective implements Validator, OnChanges {
+  private _onChange?: () => void;
+
   @Input() appSameStringValidator = '';
   validate(control: AbstractControl): ValidationErrors | null {
     return sameString(this.appSameStringValidator)(control);
+  }
+
+  registerOnValidatorChange(fn: () => void): void {
+    this._onChange = fn;
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if ('appSameStringValidator' in changes) {
+      if (this._onChange) {
+        this._onChange();
+      }
+    }
   }
 }
