@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { SameStringValidatorDirective } from './shared/validators/same-string-validator.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { UsedStringValidatorDirective } from './pages/sign-up/validators/used-string-validator.directive';
+import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,8 @@ import { UsedStringValidatorDirective } from './pages/sign-up/validators/used-st
     SameStringValidatorDirective,
 
     UsedStringValidatorDirective,
+
+    LoadingSpinnerComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
