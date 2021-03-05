@@ -1,15 +1,19 @@
 <nav appMenu>
   <ul>
-    <li><a class="main-nav--item" routerLink="/">Home</a></li>
+    <li><a class="main-nav--item" (click)="onNavClick('/')">Home</a></li>
     <li>
-      <a class="main-nav--item" routerLink="/">About</a>
+      <a class="main-nav--item" (click)="onNavClick('/')">About</a>
     </li>
     <li>
-      <a class="main-nav--item" routerLink="/">Support</a>
+      <a class="main-nav--item" (click)="onNavClick('/')">Support</a>
     </li>
     <li>
-      <a class="button button--primary-outlined" routerLink="/log-in">Log In</a>
-      <a class="button button--primary" routerLink="/sign-up">Create Account</a>
+      <a class="button button--primary-outlined" (click)="onNavClick('/log-in')"
+        >Log In</a
+      >
+      <a class="button button--primary" (click)="onNavClick('/sign-up')"
+        >Create Account</a
+      >
     </li>
   </ul>
 </nav>
