@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'travely';
   isMenuActive = false;
+  isLoading = false;
 }
