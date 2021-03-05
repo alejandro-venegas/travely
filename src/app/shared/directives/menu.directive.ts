@@ -1,5 +1,5 @@
 import { Directive, HostBinding, Input, OnInit } from '@angular/core';
-import { MenuService } from './services/menu.service';
+import { MenuService } from '../services/menu.service';
 
 @Directive({
   selector: '[appMenu]',
