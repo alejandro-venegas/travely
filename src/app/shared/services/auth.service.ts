@@ -46,13 +46,12 @@ export class AuthService {
     );
   }
 
-  saveUserData(data: SignUpData): void {
+  saveUserData(data: SignUpData): Observable<any> {
     const url =
       this.apiUrl + 'user-info/' + this.userSubject.getValue()?.id + '.json';
-    this.http
-      .put(url, { firstName: data.firstName, lastName: data.lastName })
-      .subscribe((res) => {
-        this.router.navigate(['/log-in'], { replaceUrl: true });
-      });
+    return this.http.put(url, {
+      firstName: data.firstName,
+      lastName: data.lastName,
+    });
   }
 }
