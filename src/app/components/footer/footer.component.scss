@@ -1,15 +1,15 @@
 @import 'src/assets/styles/colors.scss';
 :host {
-  padding: 2rem;
+  padding: 3.2rem;
 
   span {
     display: flex;
     align-items: center;
     margin: 1rem;
-    font-size: 0.7rem;
+    font-size: 1.1rem;
   }
   a {
-    margin: 1rem;
+    margin: 1.6rem;
   }
 
   * {

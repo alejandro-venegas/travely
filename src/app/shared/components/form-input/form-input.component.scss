@@ -1,6 +1,6 @@
 @import './src/assets/styles/colors';
 $transition-duration: 0.2s;
-$child-padding: 0.5rem 0;
+$child-padding: 0.8rem 0;
 :host {
   display: block;
   position: relative;
@@ -8,10 +8,10 @@ $child-padding: 0.5rem 0;
     width: 100%;
     display: flex;
     position: relative;
-    padding: 0 0.5rem;
+    padding: 0 0.8rem;
     align-items: center;
-    height: 3rem;
-    border-radius: 0.5rem;
+    height: 4.8rem;
+    border-radius: 0.8rem;
     border: 2px lightgrey solid;
     cursor: text;
     transition: border-color $transition-duration ease;
@@ -37,20 +37,20 @@ $child-padding: 0.5rem 0;
   transform: translateY(100%);
   left: 0;
   color: red;
-  font-size: 0.8rem;
+  font-size: 1.28rem;
 }
 input {
   border: none;
   background-color: $white;
   min-width: 0;
-  font-size: 1rem;
+  font-size: 1.6rem;
   flex: 1;
 }
 .separator-bar {
   position: relative;
-  height: 3rem;
-  width: 0.15rem;
-  margin: 0 0.5rem;
+  height: 4.8rem;
+  width: 0.24rem;
+  margin: 0 0.8rem;
   opacity: 0;
   background-color: $primary;
   transition: opacity $transition-duration ease;
@@ -63,7 +63,7 @@ label {
   left: 50%;
   transform: translateX(-50%) scale(1.2);
   color: grey;
-  font-size: 1rem;
+  font-size: 1.6rem;
   transition: all $transition-duration ease;
 }
 label.focused {

@@ -11,13 +11,13 @@ form {
 }
 section {
   width: 100%;
-  max-width: 40rem;
+  max-width: 64rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   min-height: $main-height;
-  padding: 2rem;
+  padding: 3.2rem;
 }
 button {
   margin: 1rem;
@@ -30,7 +30,7 @@ button {
   align-self: center;
 }
 app-form-input {
-  margin: 2rem 0.5rem;
+  margin: 3.2rem 0.8rem;
 }
 
 app-form-input:first-child {
