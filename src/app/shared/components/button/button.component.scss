@@ -1,0 +1,25 @@
+@import '/src/assets/styles/colors.scss';
+:host {
+  width: fit-content;
+  align-self: center;
+}
+.button {
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: solid 2px $white;
+  color: $white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.primary {
+  border-color: $primary;
+  background-color: $primary;
+}
+
+.outlined {
+  border-color: $primary;
+  background-color: transparent;
+  color: $primary;
+  font-weight: 600;
+}

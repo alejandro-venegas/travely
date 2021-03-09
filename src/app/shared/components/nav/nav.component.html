@@ -8,11 +8,11 @@
       <a class="main-nav--item" (click)="onNavClick('/')">Support</a>
     </li>
     <li>
-      <a class="button button--primary-outlined" (click)="onNavClick('/log-in')"
-        >Log In</a
+      <app-button theme="outlined" type="button" (click)="onNavClick('/log-in')"
+        >Log In</app-button
       >
-      <a class="button button--primary" (click)="onNavClick('/sign-up')"
-        >Create Account</a
+      <app-button type="button" (click)="onNavClick('/sign-up')"
+        >Create Account</app-button
       >
     </li>
   </ul>

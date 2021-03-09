@@ -40,10 +40,9 @@ nav {
         justify-content: space-evenly;
         display: flex;
 
-        .button {
+        app-button {
           text-align: center;
           width: 45%;
-          padding: 1rem 0;
         }
       }
     }
@@ -95,11 +94,10 @@ nav {
           margin: 0;
           padding: 0;
 
-          .button {
+          app-button {
             font-size: 1rem;
             text-align: center;
             margin: 0 0.5rem;
-            padding: 1rem;
             width: max-content;
           }
         }

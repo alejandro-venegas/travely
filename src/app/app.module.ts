@@ -19,6 +19,7 @@ import { SameStringValidatorDirective } from './shared/validators/same-string-va
 import { HttpClientModule } from '@angular/common/http';
 import { UsedStringValidatorDirective } from './pages/sign-up/validators/used-string-validator.directive';
 import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
+import { ButtonComponent } from './shared/components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,8 @@ import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loa
     UsedStringValidatorDirective,
 
     LoadingSpinnerComponent,
+
+    ButtonComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

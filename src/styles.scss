@@ -17,26 +17,6 @@ a {
   text-decoration: none;
 }
 
-.button {
-  padding: 1rem 2rem;
-  border-radius: 1rem;
-  border: solid 2px $white;
-  color: $white;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.button--primary {
-  border-color: $primary;
-  background-color: $primary;
-}
-
-.button--primary-outlined {
-  border-color: $primary;
-  color: $primary;
-  font-weight: 600;
-}
-
 @media only screen and (max-width: calc(#{$tablet-breakpoint} - 1px)) {
   .medium-devices--only {
     display: none !important;
