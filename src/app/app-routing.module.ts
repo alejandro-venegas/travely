@@ -3,29 +3,39 @@ import { Routes, RouterModule } from '@angular/router';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { LogInComponent } from './pages/log-in/log-in.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NewTripComponent } from './pages/new-trip/new-trip.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: LandingPageComponent
+    component: LandingPageComponent,
   },
   {
     path: 'sign-up',
-    component: SignUpComponent
+    component: SignUpComponent,
   },
   {
     path: 'log-in',
-    component: LogInComponent
+    component: LogInComponent,
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
+  {
+    path: 'trip/new',
+    component: NewTripComponent,
   },
   {
     path: '**',
-    component: LandingPageComponent
+    component: LandingPageComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

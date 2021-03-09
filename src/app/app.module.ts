@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsedStringValidatorDirective } from './pages/sign-up/validators/used-string-validator.directive';
 import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
 import { ButtonComponent } from './shared/components/button/button.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NewTripComponent } from './pages/new-trip/new-trip.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,10 @@ import { ButtonComponent } from './shared/components/button/button.component';
     LoadingSpinnerComponent,
 
     ButtonComponent,
+
+    HomeComponent,
+
+    NewTripComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
