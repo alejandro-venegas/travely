@@ -22,6 +22,7 @@ import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loa
 import { ButtonComponent } from './shared/components/button/button.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NewTripComponent } from './pages/new-trip/new-trip.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,13 @@ import { NewTripComponent } from './pages/new-trip/new-trip.component';
 
     NewTripComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

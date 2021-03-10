@@ -17,7 +17,13 @@ body {
   height: 100%;
   font-size: 1.6rem;
 }
-
+.form--input-container {
+  display: flex;
+  flex-direction: column;
+  @media only screen and (min-width: $tablet-breakpoint) {
+    flex-direction: row;
+  }
+}
 a {
   text-decoration: none;
 }

@@ -1,1 +1,48 @@
-<p>new-trip works!</p>
+<section>
+  <h1>New Trip</h1>
+  <div class="form__container">
+    <form [@stepper]="stepperState[0]" #generalForm="ngForm">
+      <app-form-input label="Trip Name" ngModel name="name"></app-form-input>
+      <div class="form--input-container">
+        <app-form-input
+          required
+          label="Country"
+          ngModel
+          name="country"
+        ></app-form-input>
+        <app-form-input
+          required
+          label="City"
+          ngModel
+          name="city"
+        ></app-form-input>
+      </div>
+      <div class="form--input-container">
+        <app-form-input label="From" ngModel name="fromDate"></app-form-input>
+        <app-form-input label="To" name="toDate"></app-form-input>
+      </div>
+    </form>
+
+    <form [@stepper]="stepperState[1]" #generalForm="ngForm">
+      <app-form-input label="Trip Name" ngModel name="name"></app-form-input>
+      <div class="form--input-container">
+        <app-form-input
+          required
+          label="Country"
+          ngModel
+          name="country"
+        ></app-form-input>
+        <app-form-input
+          required
+          label="City"
+          ngModel
+          name="city"
+        ></app-form-input>
+      </div>
+    </form>
+  </div>
+  <div class="form--input-container">
+    <app-button (click)="onBackClick()" theme="outlined">Back</app-button>
+    <app-button (click)="onNextClick()">Next</app-button>
+  </div>
+</section>
