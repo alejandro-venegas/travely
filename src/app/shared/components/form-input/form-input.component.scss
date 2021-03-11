@@ -60,6 +60,7 @@ input {
 }
 label {
   position: relative;
+  z-index: 2;
   left: 50%;
   transform: translateX(-50%) scale(1.2);
   color: grey;
@@ -73,4 +74,20 @@ label.focused {
 }
 .input-container.focused {
   border-color: $primary;
+}
+
+::ng-deep {
+  ng-select {
+    font-size: 1.6rem;
+    flex: 1;
+
+    &.ng-select > .ng-select-container {
+      background-color: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    &.ng-select .ng-select-container:hover {
+      box-shadow: none;
+    }
+  }
 }

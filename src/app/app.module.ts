@@ -23,6 +23,7 @@ import { ButtonComponent } from './shared/components/button/button.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NewTripComponent } from './pages/new-trip/new-trip.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NgSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

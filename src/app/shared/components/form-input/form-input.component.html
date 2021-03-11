@@ -2,6 +2,7 @@
   [ngClass]="{ focused: this.isFocused || input.value }"
   (click)="input.focus()"
   class="input-container"
+  *ngIf="!isSelect"
 >
   <label
     [ngClass]="{
@@ -25,5 +26,38 @@
     (focusout)="onFocus(false)"
     #input
   />
+</div>
+<div
+  [ngClass]="{ focused: this.isFocused || input.selectedValues[0] }"
+  (click)="input.focus()"
+  class="input-container"
+  *ngIf="isSelect"
+>
+  <label
+    [ngClass]="{
+      focused: this.isFocused || input.selectedValues[0]
+    }"
+    for="{{ name }}"
+    >{{ label }}</label
+  >
+  <div
+    class="separator-bar"
+    [ngClass]="{
+      focused: this.isFocused || input.selectedValues[0]
+    }"
+    aria-hidden="true"
+  ></div>
+  <ng-select
+    [items]="cars"
+    bindLabel="name"
+    bindValue="id"
+    [clearable]="false"
+    [id]="name"
+    (change)="change($event)"
+    (focusin)="onFocus(true)"
+    (focusout)="onFocus(false)"
+    #input
+  >
+  </ng-select>
 </div>
 <div class="error-container"><ng-content></ng-content></div>

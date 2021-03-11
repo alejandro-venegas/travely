@@ -14,15 +14,26 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ],
 })
 export class FormInputComponent implements OnInit, ControlValueAccessor {
-  // @ts-ignore
-  onChange;
-  // @ts-ignore
-  onTouched;
+  onChange: any;
+  onTouched: any;
+  isSelect = false;
+  cars: any = [
+    { id: 1, name: 'Volvo' },
+    { id: 2, name: 'Saab' },
+    { id: 3, name: 'Opel' },
+    { id: 4, name: 'Audi' },
+  ];
+  isFocused = false;
+
   @Input() type = 'text';
   @Input() label = '';
   @Input() name = '';
-  isFocused = false;
+  @Input() set select(value: any) {
+    this.isSelect = true;
+  }
   constructor() {}
+
+  ngOnInit(): void {}
 
   writeValue(obj: any): void {}
   registerOnChange(fn: any): void {
@@ -31,7 +42,6 @@ export class FormInputComponent implements OnInit, ControlValueAccessor {
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
-  ngOnInit(): void {}
 
   change(value: any): void {
     this.onChange(value);
