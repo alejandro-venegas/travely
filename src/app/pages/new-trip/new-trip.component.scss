@@ -9,6 +9,7 @@ section {
 .form__container {
   display: flex;
   align-items: center;
+  position: relative;
 }
 app-button {
   margin: 1rem 1rem;

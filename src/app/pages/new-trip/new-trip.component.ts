@@ -1,48 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import {
   animate,
+  group,
   state,
   style,
   transition,
   trigger,
 } from '@angular/animations';
+import { formFade } from './animations/form-fade.animation';
 
 @Component({
   selector: 'app-new-trip',
   templateUrl: './new-trip.component.html',
   styleUrls: ['./new-trip.component.scss'],
-  animations: [
-    trigger('stepper', [
-      state(
-        'left',
-        style({
-          height: '15rem',
-          width: 0,
-          overflow: 'visible',
-          transform: 'translateX(-100vw)',
-        })
-      ),
-      state(
-        'center',
-        style({
-          transform: 'unset',
-        })
-      ),
-      state(
-        'right',
-        style({
-          height: '15rem',
-          width: 0,
-          overflow: 'visible',
-          transform: 'translateX(100vw)',
-        })
-      ),
-      transition('void => *', []),
-      transition('* => left', [animate('0.7s')]),
-      transition('* => right', [animate('0.7s')]),
-      transition('* => center', [animate('0.7s')]),
-    ]),
-  ],
+  animations: [formFade],
 })
 export class NewTripComponent implements OnInit {
   stepperState: string[] = ['center', 'right'];
