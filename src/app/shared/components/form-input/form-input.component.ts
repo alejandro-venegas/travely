@@ -16,21 +16,15 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class FormInputComponent implements OnInit, ControlValueAccessor {
   onChange: any;
   onTouched: any;
-  isSelect = false;
-  cars: any = [
-    { id: 1, name: 'Volvo' },
-    { id: 2, name: 'Saab' },
-    { id: 3, name: 'Opel' },
-    { id: 4, name: 'Audi' },
-  ];
   isFocused = false;
 
   @Input() type = 'text';
   @Input() label = '';
   @Input() name = '';
-  @Input() set select(value: any) {
-    this.isSelect = true;
-  }
+  @Input() select?: any[];
+  @Input() selectOptionLabel = 'label';
+  @Input() selectOptionValue = '-';
+
   constructor() {}
 
   ngOnInit(): void {}

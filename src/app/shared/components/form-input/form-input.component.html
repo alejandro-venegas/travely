@@ -2,7 +2,7 @@
   [ngClass]="{ focused: this.isFocused || input.value }"
   (click)="input.focus()"
   class="input-container"
-  *ngIf="!isSelect"
+  *ngIf="!select"
 >
   <label
     [ngClass]="{
@@ -31,7 +31,7 @@
   [ngClass]="{ focused: this.isFocused || input.selectedValues[0] }"
   (click)="input.focus()"
   class="input-container"
-  *ngIf="isSelect"
+  *ngIf="select"
 >
   <label
     [ngClass]="{
@@ -48,9 +48,9 @@
     aria-hidden="true"
   ></div>
   <ng-select
-    [items]="cars"
-    bindLabel="name"
-    bindValue="id"
+    [items]="select"
+    [bindLabel]="selectOptionLabel"
+    [bindValue]="selectOptionValue"
     [clearable]="false"
     [id]="name"
     (change)="change($event)"
