@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   apiKey: 'AIzaSyCMrFA7fNQinTQA4Curj7HB9-mURBcB6Gs',
   apiUrl: 'https://travely-f8760-default-rtdb.firebaseio.com/',
+  geoNamesUsername: 'alejandro_venegas',
 };
 
 /*
