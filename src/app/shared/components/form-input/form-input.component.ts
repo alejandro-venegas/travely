@@ -17,6 +17,7 @@ export class FormInputComponent implements OnInit, ControlValueAccessor {
   onChange: any;
   onTouched: any;
   isFocused = false;
+  inputValue = '';
 
   @Input() type = 'text';
   @Input() label = '';
@@ -24,6 +25,7 @@ export class FormInputComponent implements OnInit, ControlValueAccessor {
   @Input() select?: any[];
   @Input() selectOptionLabel = 'label';
   @Input() selectOptionValue = '-';
+  @Input() mask = '';
 
   constructor() {}
 

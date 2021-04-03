@@ -6,13 +6,26 @@
       label="Country"
       [select]="countries"
       selectOptionLabel="countryName"
+      (ngModelChange)="onCountrySelected($event)"
       ngModel
       name="country"
     ></app-form-input>
-    <app-form-input required label="City" ngModel name="city"></app-form-input>
+    <app-form-input
+      [select]="cities"
+      selectOptionLabel="name"
+      required
+      label="City"
+      ngModel
+      name="city"
+    ></app-form-input>
   </div>
   <div class="form--input-container">
-    <app-form-input label="From" ngModel name="fromDate"></app-form-input>
+    <app-form-input
+      mask="dd/mm/yyyy"
+      label="From"
+      ngModel
+      name="fromDate"
+    ></app-form-input>
     <app-form-input label="To" name="toDate"></app-form-input>
   </div>
 </form>

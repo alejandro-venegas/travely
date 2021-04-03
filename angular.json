@@ -34,7 +34,8 @@
               "src/styles.scss",
               "./node_modules/hamburgers/_sass/hamburgers/hamburgers.scss"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
             "production": {
