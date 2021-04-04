@@ -27,8 +27,7 @@ export class GeonamesService {
       'searchJSON?username=' +
       this._username +
       '&country=' +
-      countryCode +
-      '&maxRows=1000';
+      countryCode;
 
     return this.http
       .get<{ totalResultsCount: number; geonames: City[] }>(url)
