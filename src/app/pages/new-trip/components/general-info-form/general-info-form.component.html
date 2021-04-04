@@ -21,11 +21,16 @@
   </div>
   <div class="form--input-container">
     <app-form-input
-      mask="dd/mm/yyyy"
+      mask="datetime"
       label="From"
       ngModel
       name="fromDate"
     ></app-form-input>
-    <app-form-input label="To" name="toDate"></app-form-input>
+    <app-form-input
+      mask="datetime"
+      ngModel
+      label="To"
+      name="toDate"
+    ></app-form-input>
   </div>
 </form>

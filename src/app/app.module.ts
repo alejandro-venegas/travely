@@ -25,6 +25,7 @@ import { NewTripComponent } from './pages/new-trip/new-trip.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { GeneralInfoFormComponent } from './pages/new-trip/components/general-info-form/general-info-form.component';
+import { InputMaskDirective } from './shared/components/form-input/directives/input-mask.directive';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,8 @@ import { GeneralInfoFormComponent } from './pages/new-trip/components/general-in
     NewTripComponent,
 
     GeneralInfoFormComponent,
+
+    InputMaskDirective,
   ],
   imports: [
     BrowserModule,

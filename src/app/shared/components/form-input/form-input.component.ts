@@ -40,12 +40,14 @@ export class FormInputComponent implements OnInit, ControlValueAccessor {
   }
 
   change(value: any): void {
-    this.onChange(value);
+    if (this.onChange) {
+      this.onChange(value);
+    }
   }
   onFocus(value: boolean): void {
     this.isFocused = value;
 
-    if (!value) {
+    if (!value && this.onTouched) {
       this.onTouched();
     }
   }

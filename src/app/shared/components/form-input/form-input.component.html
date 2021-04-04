@@ -19,6 +19,7 @@
     aria-hidden="true"
   ></div>
   <input
+    [appInputMask]="mask"
     [type]="type"
     [id]="name"
     (input)="change(input.value)"
@@ -53,6 +54,7 @@
     [bindValue]="selectOptionValue"
     [clearable]="false"
     [id]="name"
+    [virtualScroll]="true"
     (change)="change($event)"
     (focusin)="onFocus(true)"
     (focusout)="onFocus(false)"
