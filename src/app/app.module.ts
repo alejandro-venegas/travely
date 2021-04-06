@@ -26,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { GeneralInfoFormComponent } from './pages/new-trip/components/general-info-form/general-info-form.component';
 import { InputMaskDirective } from './shared/components/form-input/directives/input-mask.directive';
+import { TripReviewComponent } from './pages/new-trip/components/trip-review/trip-review.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,8 @@ import { InputMaskDirective } from './shared/components/form-input/directives/in
     GeneralInfoFormComponent,
 
     InputMaskDirective,
+
+    TripReviewComponent,
   ],
   imports: [
     BrowserModule,

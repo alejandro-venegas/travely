@@ -6,9 +6,7 @@
       #generalInfoForm
     ></app-general-info-form>
 
-    <form [@stepper]="stepperState[1]" #generalForm="ngForm">
-      <img [src]="imgUrl" alt="Preview Image" *ngIf="imgUrl" />
-    </form>
+    <form [@stepper]="stepperState[1]" #generalForm="ngForm"></form>
   </div>
   <div class="form--input-container">
     <app-button (click)="onBackClick()" theme="outlined">Back</app-button>

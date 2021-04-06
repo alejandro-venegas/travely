@@ -46,9 +46,6 @@ export class NewTripComponent implements OnInit {
         this.stepperState[nextIndex] = 'center';
       }
     } else {
-      const currentIndex = this.stepperState.findIndex(
-        (value) => value === 'center'
-      );
       const pastIndex = currentIndex - 1;
       if (pastIndex >= 0) {
         this.stepperState[currentIndex] = 'right';
