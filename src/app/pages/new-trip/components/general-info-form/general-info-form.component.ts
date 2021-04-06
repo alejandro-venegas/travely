@@ -3,7 +3,6 @@ import { GeonamesService } from '../../../../shared/services/geonames.service';
 import { Country } from '../../../../shared/interfaces/country.interface';
 import { City } from '../../../../shared/interfaces/city.interface';
 import { NgForm } from '@angular/forms';
-import { Picture } from '../../../../shared/interfaces/picture.interface';
 import { Trip } from '../../../../shared/interfaces/trip.interface';
 
 @Component({
@@ -36,11 +35,17 @@ export class GeneralInfoFormComponent implements OnInit {
 
   onSave(): Trip | undefined {
     if (this.form?.valid) {
-      const value = this.form.value as Trip;
-
-      return value;
+      const formData = this.form.value;
+      formData.fromDate = this.parseToDate(formData.fromDate);
+      formData.toDate = this.parseToDate(formData.toDate);
+      return formData as Trip;
     }
     this.form?.control.markAllAsTouched();
     return undefined;
+  }
+
+  parseToDate(dateString: string): Date {
+    const [day, month, year] = dateString.split('/');
+    return new Date(`${year}-${month}-${day}`);
   }
 }

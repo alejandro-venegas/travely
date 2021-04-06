@@ -35,7 +35,7 @@ export class NewTripComponent implements OnInit {
     this.setStepperState('back');
   }
 
-  setStepperState(mode: 'next' | 'back') {
+  setStepperState(mode: 'next' | 'back'): void {
     const currentIndex = this.stepperState.findIndex(
       (value) => value === 'center'
     );
