@@ -9,7 +9,7 @@ import { FlickrService } from '../../../../shared/services/flickr.service';
 })
 export class TripReviewComponent implements OnInit {
   private _trip: Trip | null = null;
-  private imgUrl = '';
+  imgUrl = '';
 
   @Input() set trip(trip: Trip | null) {
     this._trip = trip;
