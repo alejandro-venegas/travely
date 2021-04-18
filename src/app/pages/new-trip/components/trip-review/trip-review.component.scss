@@ -1,0 +1,34 @@
+@import 'src/assets/styles/sizes';
+:host {
+  display: flex;
+  flex-direction: column;
+}
+.preview-image {
+  min-height: 300px;
+  max-height: 300px;
+}
+.img-container {
+  display: flex;
+  flex-direction: column;
+}
+.info-line {
+  span {
+    font-weight: bold;
+  }
+  margin: 0.5rem 0;
+}
+.info--img-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 0 0 0;
+}
+
+@media only screen and (min-width: $laptop-breakpoint) {
+  .img-container {
+    flex-direction: row;
+
+    .info--img-container {
+      margin: 0 0 0 1.5rem;
+    }
+  }
+}

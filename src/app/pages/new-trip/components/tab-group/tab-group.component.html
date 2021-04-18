@@ -1,4 +1,6 @@
-<ng-template let-index="index" ngFor [ngForOf]="tabs">
-  <ng-content select="[tabIndexNumber]"></ng-content>
-  {{ index }}
-</ng-template>
+<div
+  [@stepper]="stepperState[i]"
+  *ngFor="let templateRef of tabs; let i = index"
+>
+  <ng-container [ngTemplateOutlet]="templateRef"></ng-container>
+</div>

@@ -36,9 +36,11 @@ export class GeneralInfoFormComponent implements OnInit {
   onSave(): Trip | undefined {
     if (this.form?.valid) {
       const formData = this.form.value;
-      formData.fromDate = this.parseToDate(formData.fromDate);
-      formData.toDate = this.parseToDate(formData.toDate);
-      return formData as Trip;
+
+      const trip = { ...formData } as Trip;
+      trip.fromDate = this.parseToDate(formData.fromDate);
+      trip.toDate = this.parseToDate(formData.toDate);
+      return trip as Trip;
     }
     this.form?.control.markAllAsTouched();
     return undefined;

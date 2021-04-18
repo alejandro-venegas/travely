@@ -8,19 +8,16 @@
 
   <!--    <form [@stepper]="stepperState[1]" #generalForm="ngForm"></form>-->
   <!--  </div>-->
-  <app-tab-group>
-    <app-tab tabIndexNumber>
-      <app-general-info-form
-        [@stepper]="stepperState[0]"
-        #generalInfoForm
-      ></app-general-info-form>
-    </app-tab>
-    <app-tab>
-      <form [@stepper]="stepperState[1]" #generalForm="ngForm"></form>
-    </app-tab>
+  <app-tab-group #tabGroup>
+    <ng-template>
+      <app-general-info-form #generalInfoForm></app-general-info-form>
+    </ng-template>
+    <ng-template>
+      <app-trip-review [trip]="trip"></app-trip-review>
+    </ng-template>
   </app-tab-group>
   <div class="form--input-container">
-    <app-button (click)="onBackClick()" theme="outlined">Back</app-button>
-    <app-button (click)="onNextClick(generalInfoForm)">Next</app-button>
+    <app-button (click)="tabGroup.back()" theme="outlined">Back</app-button>
+    <app-button (click)="onNextClick()">Next</app-button>
   </div>
 </section>

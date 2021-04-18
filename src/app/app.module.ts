@@ -28,7 +28,6 @@ import { GeneralInfoFormComponent } from './pages/new-trip/components/general-in
 import { InputMaskDirective } from './shared/components/form-input/directives/input-mask.directive';
 import { TripReviewComponent } from './pages/new-trip/components/trip-review/trip-review.component';
 import { TabGroupComponent } from './pages/new-trip/components/tab-group/tab-group.component';
-import { TabComponent } from './pages/new-trip/components/tab/tab.component';
 
 @NgModule({
   declarations: [
@@ -66,8 +65,6 @@ import { TabComponent } from './pages/new-trip/components/tab/tab.component';
     TripReviewComponent,
 
     TabGroupComponent,
-
-    TabComponent,
   ],
   imports: [
     BrowserModule,

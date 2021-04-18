@@ -8,6 +8,7 @@ export const environment = {
   apiUrl: 'https://travely-f8760-default-rtdb.firebaseio.com/',
   geoNamesUsername: 'alejandro_venegas',
   flickrApiKey: '41e2cd5e79ca7b46c601b8a262646cf4',
+  visualCrossingApiKey: 'ZX9C3HHBF4XPGXTHSK789ZQRE',
 };
 
 /*

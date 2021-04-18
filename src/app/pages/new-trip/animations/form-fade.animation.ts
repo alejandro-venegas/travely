@@ -39,7 +39,7 @@ export const formFade = trigger('stepper', [
       animate(
         300,
         style({
-          height: '15rem',
+          height: '230px',
           transform: 'translateX(-10vw)',
         })
       ),
@@ -52,8 +52,7 @@ export const formFade = trigger('stepper', [
       animate(
         300,
         style({
-          height: '15rem',
-
+          height: '230px',
           transform: 'translateX(10vw)',
         })
       ),

@@ -1,6 +1,38 @@
-<img
-  [src]="imgUrl"
-  (load)="onImageLoaded()"
-  alt="Preview Image"
-  *ngIf="imgUrl"
-/>
+<h3 class="title">{{ trip?.name }}</h3>
+<div class="img-container">
+  <img
+    [src]="imgUrl"
+    (load)="onImageLoaded()"
+    alt="Preview Image"
+    class="preview-image"
+    *ngIf="imgUrl"
+  />
+  <div class="info--img-container">
+    <div class="info-line">
+      <span>Country:</span> {{ trip?.country?.countryName }}
+    </div>
+    <div class="info-line"><span>Place:</span> {{ trip?.city?.name }}</div>
+    <div class="info-line">
+      <span>From:</span> {{ trip?.fromDate | date: 'dd/MM/yyyy' }}
+    </div>
+    <div class="info-line">
+      <span>To:</span> {{ trip?.toDate | date: 'dd/MM/yyyy' }}
+    </div>
+    <div class="info-line">
+      <span>Min Temp (C°):</span> {{ weather?.days[0].tempmin }}
+    </div>
+    <div class="info-line">
+      <span>Max Temp (C°):</span> {{ weather?.days[0].tempmax }}
+    </div>
+
+    <div class="info-line">
+      <span>Sunrise (24h):</span> {{ weather?.days[0].sunrise }}
+    </div>
+    <div class="info-line">
+      <span>Sunset (24h):</span> {{ weather?.days[0].sunset }}
+    </div>
+    <div class="info-line">
+      <span>Conditions:</span> {{ weather?.days[0].conditions }}
+    </div>
+  </div>
+</div>
