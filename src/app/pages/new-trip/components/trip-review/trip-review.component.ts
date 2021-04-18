@@ -4,6 +4,7 @@ import { FlickrService } from '../../../../shared/services/flickr.service';
 import { forkJoin } from 'rxjs';
 import { WeatherService } from '../../../../shared/services/weather.service';
 import { Weather } from '../../../../shared/interfaces/weather.interface';
+import { WeatherDay } from '../../../../shared/interfaces/weather-day.interface';
 
 @Component({
   selector: 'app-trip-review',
@@ -13,6 +14,7 @@ import { Weather } from '../../../../shared/interfaces/weather.interface';
 export class TripReviewComponent implements OnInit {
   private _trip: Trip | null = null;
   weather: Weather | null = null;
+  weatherDay: WeatherDay | null = null;
   imgUrl = '';
 
   @Input() set trip(trip: Trip | null) {
@@ -49,6 +51,7 @@ export class TripReviewComponent implements OnInit {
         this._trip.picture = value.image;
         this.imgUrl = this.flickrService.parseImageDataToUrl(value.image);
         this.weather = value.weather;
+        this.weatherDay = value.weather.days[0];
       }
     });
   }

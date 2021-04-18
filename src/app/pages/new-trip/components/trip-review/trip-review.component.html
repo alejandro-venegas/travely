@@ -19,20 +19,20 @@
       <span>To:</span> {{ trip?.toDate | date: 'dd/MM/yyyy' }}
     </div>
     <div class="info-line">
-      <span>Min Temp (C°):</span> {{ weather?.days[0].tempmin }}
+      <span>Min Temp (C°):</span> {{ weatherDay?.tempmin }}
     </div>
     <div class="info-line">
-      <span>Max Temp (C°):</span> {{ weather?.days[0].tempmax }}
+      <span>Max Temp (C°):</span> {{ weatherDay?.tempmax }}
     </div>
 
     <div class="info-line">
-      <span>Sunrise (24h):</span> {{ weather?.days[0].sunrise }}
+      <span>Sunrise (24h):</span> {{ weatherDay?.sunrise }}
     </div>
     <div class="info-line">
-      <span>Sunset (24h):</span> {{ weather?.days[0].sunset }}
+      <span>Sunset (24h):</span> {{ weatherDay?.sunset }}
     </div>
     <div class="info-line">
-      <span>Conditions:</span> {{ weather?.days[0].conditions }}
+      <span>Conditions:</span> {{ weatherDay?.conditions }}
     </div>
   </div>
 </div>
