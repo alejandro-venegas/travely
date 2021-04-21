@@ -1,19 +1,12 @@
 <section>
   <h1>New Trip</h1>
-  <!--  <div class="form__container">-->
-  <!--    <app-general-info-form-->
-  <!--      [@stepper]="stepperState[0]"-->
-  <!--      #generalInfoForm-->
-  <!--    ></app-general-info-form>-->
 
-  <!--    <form [@stepper]="stepperState[1]" #generalForm="ngForm"></form>-->
-  <!--  </div>-->
   <app-tab-group #tabGroup>
     <ng-template>
       <app-general-info-form #generalInfoForm></app-general-info-form>
     </ng-template>
     <ng-template>
-      <app-trip-review [trip]="trip"></app-trip-review>
+      <app-trip-review (loaded)="onLoaded()" [trip]="trip"></app-trip-review>
     </ng-template>
   </app-tab-group>
   <div class="form--input-container">

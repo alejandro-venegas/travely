@@ -34,8 +34,10 @@ export class NewTripComponent implements OnInit {
 
     if (trip) {
       this.trip = trip;
-      this.tabGroup?.next();
     }
+  }
+  onLoaded(): void {
+    this.tabGroup?.next();
   }
   onBackClick(): void {}
 }

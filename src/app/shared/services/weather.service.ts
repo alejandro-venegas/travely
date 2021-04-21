@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 
 import { environment } from '../../../environments/environment';
 import { Weather } from '../interfaces/weather.interface';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,12 @@ export class WeatherService {
 
   fetchWeather(city: City, country: Country, date: Date): Observable<Weather> {
     const formatedDate = date.toISOString().split('T')[0];
-    const url = `${this.baseUrl}${city.name}, ${country.countryName}/${formatedDate}?unitGroup=metric&key=${this.apiKey}`;
-    return this.http.get<Weather>(encodeURI(url));
+    let url = `${this.baseUrl}${city.name}, ${country.countryName}/${formatedDate}?unitGroup=metric&key=${this.apiKey}`;
+    return this.http.get<Weather>(encodeURI(url)).pipe(
+      catchError((err) => {
+        url = `${this.baseUrl}${country.countryName}/${formatedDate}?unitGroup=metric&key=${this.apiKey}`;
+        return this.http.get<Weather>(encodeURI(url));
+      })
+    );
   }
 }
