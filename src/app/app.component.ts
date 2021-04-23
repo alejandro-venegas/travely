@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { LoadingSpinnerService } from './shared/services/loading-spinner.service';
 
 @Component({
@@ -17,5 +17,9 @@ export class AppComponent implements OnInit {
     this.loadingSpinnerService.loadingSpinnerSubject.subscribe(
       (val) => (this.isLoading = val)
     );
+  }
+
+  onRouterActivate(appContainer: HTMLDivElement): void {
+    appContainer.scroll(0, 0);
   }
 }

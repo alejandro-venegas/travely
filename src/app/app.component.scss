@@ -1,6 +1,6 @@
 @import 'src/assets/styles/colors.scss';
 @import 'src/assets/styles/sizes.scss';
-:host {
+.app-container {
   position: relative;
   display: grid;
   background-color: $white;
