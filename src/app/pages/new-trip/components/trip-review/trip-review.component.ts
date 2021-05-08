@@ -8,6 +8,8 @@ import { WeatherDay } from '../../../../shared/interfaces/weather-day.interface'
 import { LoadingSpinnerService } from '../../../../shared/services/loading-spinner.service';
 import { finalize } from 'rxjs/operators';
 import { tryCatch } from 'rxjs/internal-compatibility';
+import { Todo } from '../../../../shared/interfaces/todo.interface';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-trip-review',
@@ -19,6 +21,12 @@ export class TripReviewComponent implements OnInit {
   weather: Weather | null = null;
   weatherDay: WeatherDay | null = null;
   imgUrl = '';
+  todoList: Todo[] = [
+    { id: '1', value: 'comprar abrigo' },
+    { id: '1', value: 'comprar guantes' },
+    { id: '1', value: 'llevar bufanda' },
+    { id: '1', value: 'huevos' },
+  ];
 
   @Input() set trip(trip: Trip | null) {
     this._trip = trip;
@@ -66,5 +74,9 @@ export class TripReviewComponent implements OnInit {
   onImageLoaded(): void {
     this.loaded.emit();
     this.loadingSpinnerService.toggleLoadingSpinner();
+  }
+
+  drop(event: CdkDragDrop<Todo[]>): void {
+    moveItemInArray(this.todoList, event.previousIndex, event.currentIndex);
   }
 }

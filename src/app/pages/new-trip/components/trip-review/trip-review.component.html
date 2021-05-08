@@ -36,3 +36,9 @@
     </div>
   </div>
 </div>
+<h3>Todo List</h3>
+<div cdkDropList (cdkDropListDropped)="drop($event)">
+  <div matRipple *ngFor="let todo of todoList" cdkDrag>
+    {{ todo.value }}
+  </div>
+</div>

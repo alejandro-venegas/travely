@@ -35,9 +35,9 @@ export const formFade = trigger('stepper', [
   transition(
     '* => left',
     group([
-      animate(200, style({ opacity: 0 })),
+      animate(300, style({ opacity: 0 })),
       animate(
-        300,
+        400,
         style({
           height: '230px',
           transform: 'translateX(-10vw)',
@@ -48,9 +48,9 @@ export const formFade = trigger('stepper', [
   transition(
     '* => right',
     group([
-      animate(200, style({ opacity: 0 })),
+      animate(300, style({ opacity: 0 })),
       animate(
-        300,
+        400,
         style({
           height: '230px',
           transform: 'translateX(10vw)',
@@ -60,7 +60,7 @@ export const formFade = trigger('stepper', [
   ),
   transition('* => center', [
     style({ overflow: 'hidden' }),
-    animate(300, style({ height: '*' })),
+    animate(400, style({ height: '*' })),
     style({ width: '*', transform: 'unset' }),
     group([animate('200ms', style({ opacity: 1 }))]),
   ]),

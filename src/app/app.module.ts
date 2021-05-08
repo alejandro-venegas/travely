@@ -28,6 +28,9 @@ import { GeneralInfoFormComponent } from './pages/new-trip/components/general-in
 import { InputMaskDirective } from './shared/components/form-input/directives/input-mask.directive';
 import { TripReviewComponent } from './pages/new-trip/components/trip-review/trip-review.component';
 import { TabGroupComponent } from './pages/new-trip/components/tab-group/tab-group.component';
+import { MatListModule } from '@angular/material/list';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatRippleModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -73,6 +76,9 @@ import { TabGroupComponent } from './pages/new-trip/components/tab-group/tab-gro
     HttpClientModule,
     BrowserAnimationsModule,
     NgSelectModule,
+    MatListModule,
+    DragDropModule,
+    MatRippleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
