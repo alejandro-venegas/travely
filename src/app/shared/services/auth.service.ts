@@ -29,19 +29,14 @@ export class AuthService {
   userSubject = new BehaviorSubject<User | null>(null);
   apiUrl = environment.apiUrl;
   apiKey = environment.apiKey;
+  autoLogoutTimeout: any;
   constructor(private http: HttpClient, private router: Router) {}
 
   signUp(data: SignUpData): Observable<AuthResponse> {
     const signUpUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${this.apiKey}`;
     return this.http.post<AuthResponse>(signUpUrl, data).pipe(
       tap((authData) => {
-        const user = new User(
-          authData.email,
-          authData.localId,
-          authData.idToken,
-          new Date(new Date().getTime() + +authData.expiresIn * 1000)
-        );
-        this.userSubject.next(user);
+        this.handleAuth(authData, data.firstName, data.lastName);
       })
     );
   }
@@ -53,5 +48,34 @@ export class AuthService {
       firstName: data.firstName,
       lastName: data.lastName,
     });
+  }
+
+  private handleAuth(
+    authData: AuthResponse,
+    firstName: string,
+    lastName: string
+  ): void {
+    const tokenExpirationDate = new Date(
+      new Date().getTime() + +authData.expiresIn * 1000
+    );
+    const user = new User(
+      firstName,
+      lastName,
+      authData.email,
+      authData.localId,
+      authData.idToken,
+      tokenExpirationDate
+    );
+    this.userSubject.next(user);
+    localStorage.setItem('auth', JSON.stringify(user));
+    this.autoLogOut(tokenExpirationDate.getTime());
+  }
+  private autoLogOut(time: number): void {
+    this.autoLogoutTimeout = setTimeout(() => this.logOut(), time);
+  }
+  logOut(): void {
+    localStorage.removeItem('auth');
+    this.userSubject.next(null);
+    this.router.navigate(['/log-in']);
   }
 }
