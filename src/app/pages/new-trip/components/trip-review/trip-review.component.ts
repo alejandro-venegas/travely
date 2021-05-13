@@ -63,7 +63,7 @@ export class TripReviewComponent implements OnInit {
       if (this._trip !== null && value) {
         this._trip.picture = value.image;
         this.imgUrl =
-          this.flickrService.parseImageDataToUrl(value.images) +
+          this.flickrService.parseImageDataToUrl(value.image) +
           '?' +
           new Date().getTime();
         this.weather = value.weather;

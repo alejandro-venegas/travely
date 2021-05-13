@@ -1,6 +1,10 @@
 <section>
   <h1>Log In</h1>
-  <form id="sign-up-form" #signUpForm="ngForm">
+  <form
+    id="sign-up-form"
+    #signUpForm="ngForm"
+    (ngSubmit)="onSubmit(signUpForm)"
+  >
     <app-form-input
       ngModel
       email
