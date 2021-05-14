@@ -34,7 +34,6 @@ export class SignUpComponent implements OnInit {
         .subscribe(
           (authResponse) => {
             console.log(authResponse);
-            this.router.navigate(['/log-in'], { replaceUrl: true });
           },
           (error) => {
             switch (error?.error?.error?.message) {

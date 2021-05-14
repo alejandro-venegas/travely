@@ -40,6 +40,9 @@ nav {
         justify-content: space-evenly;
         display: flex;
       }
+      &.user-info {
+        color: $tertiary;
+      }
     }
   }
 }

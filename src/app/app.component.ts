@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { LoadingSpinnerService } from './shared/services/loading-spinner.service';
+import { AuthService } from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +12,16 @@ export class AppComponent implements OnInit {
   isMenuActive = false;
   isLoading = false;
 
-  constructor(private loadingSpinnerService: LoadingSpinnerService) {}
+  constructor(
+    private authService: AuthService,
+    private loadingSpinnerService: LoadingSpinnerService
+  ) {}
 
   ngOnInit(): void {
     this.loadingSpinnerService.loadingSpinnerSubject.subscribe(
       (val) => (this.isLoading = val)
     );
+    this.authService.autoLogIn();
   }
 
   onRouterActivate(appContainer: HTMLDivElement): void {

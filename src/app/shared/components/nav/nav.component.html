@@ -1,5 +1,9 @@
 <nav appMenu>
   <ul>
+    <li class="user-info" *ngIf="!!user">
+      Hi, {{ user?.firstName }} {{ user?.lastName }}
+    </li>
+
     <li><a class="main-nav--item" (click)="onNavClick('/home')">Home</a></li>
     <li>
       <a class="main-nav--item" (click)="onNavClick('/')">About</a>
@@ -7,7 +11,7 @@
     <li>
       <a class="main-nav--item" (click)="onNavClick('/')">Support</a>
     </li>
-    <li>
+    <li *ngIf="!user; else elseIfUser">
       <app-button theme="outlined" type="button" (click)="onNavClick('/log-in')"
         >Log In</app-button
       >
@@ -15,5 +19,13 @@
         >Create Account</app-button
       >
     </li>
+
+    <ng-template #elseIfUser>
+      <li>
+        <app-button type="button" theme="outlined" (click)="onLogOut()"
+          >Log Out</app-button
+        >
+      </li>
+    </ng-template>
   </ul>
 </nav>

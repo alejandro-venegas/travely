@@ -5,6 +5,7 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { LogInComponent } from './pages/log-in/log-in.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NewTripComponent } from './pages/new-trip/new-trip.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -23,10 +24,12 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'trip/new',
     component: NewTripComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: '**',

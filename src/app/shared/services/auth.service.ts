@@ -87,6 +87,7 @@ export class AuthService {
     this.userSubject.next(user);
     localStorage.setItem('auth', JSON.stringify(user));
     this.autoLogOut(tokenExpirationDate.getTime());
+    this.router.navigate(['/home'], { replaceUrl: true });
   }
   private autoLogOut(time: number): void {
     this.autoLogoutTimeout = setTimeout(() => this.logOut(), time);
@@ -116,5 +117,9 @@ export class AuthService {
     localStorage.removeItem('auth');
     this.userSubject.next(null);
     this.router.navigate(['/log-in']);
+    if (this.autoLogoutTimeout) {
+      clearTimeout(this.autoLogoutTimeout);
+      this.autoLogoutTimeout = null;
+    }
   }
 }
