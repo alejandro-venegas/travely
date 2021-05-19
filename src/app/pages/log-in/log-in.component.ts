@@ -10,6 +10,8 @@ import { LoadingSpinnerService } from '../../shared/services/loading-spinner.ser
   styleUrls: ['./log-in.component.scss'],
 })
 export class LogInComponent implements OnInit {
+  errorMsg = '';
+
   constructor(
     private authService: AuthService,
     private loadingSpinnerService: LoadingSpinnerService
@@ -25,7 +27,14 @@ export class LogInComponent implements OnInit {
         .pipe(finalize(() => this.loadingSpinnerService.toggleLoadingSpinner()))
         .subscribe(
           (res) => console.log(res),
-          (error) => console.log(error)
+          (error) => {
+            console.log(error);
+            switch (error.error.error.message) {
+              case 'EMAIL_NOT_FOUND':
+                this.errorMsg = 'Invalid email or password';
+                break;
+            }
+          }
         );
     } else {
       form.form.markAllAsTouched();

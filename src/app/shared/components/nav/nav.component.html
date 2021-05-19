@@ -1,10 +1,10 @@
 <nav appMenu>
   <ul>
-    <li class="user-info" *ngIf="!!user">
-      Hi, {{ user?.firstName }} {{ user?.lastName }}
-    </li>
+    <ng-template [ngIf]="!!user">
+      <li class="user-info">Hi, {{ user?.firstName }} {{ user?.lastName }}</li>
 
-    <li><a class="main-nav--item" (click)="onNavClick('/home')">Home</a></li>
+      <li><a class="main-nav--item" (click)="onNavClick('/home')">Home</a></li>
+    </ng-template>
     <li>
       <a class="main-nav--item" (click)="onNavClick('/')">About</a>
     </li>

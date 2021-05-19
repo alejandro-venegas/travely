@@ -86,7 +86,7 @@ export class AuthService {
     );
     this.userSubject.next(user);
     localStorage.setItem('auth', JSON.stringify(user));
-    this.autoLogOut(tokenExpirationDate.getTime());
+    this.autoLogOut(tokenExpirationDate.getTime() - new Date().getTime());
     this.router.navigate(['/home'], { replaceUrl: true });
   }
   private autoLogOut(time: number): void {
@@ -108,7 +108,7 @@ export class AuthService {
       if (user.token) {
         this.userSubject.next(user);
         const tokenTimeLeft =
-          tokenExpirationDate.getTime() - new Date().getTime();
+          new Date().getTime() - tokenExpirationDate.getTime();
         this.autoLogOut(tokenTimeLeft);
       }
     }
