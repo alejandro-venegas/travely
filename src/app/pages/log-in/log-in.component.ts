@@ -30,6 +30,7 @@ export class LogInComponent implements OnInit {
           (error) => {
             console.log(error);
             switch (error.error.error.message) {
+              case 'INVALID_PASSWORD':
               case 'EMAIL_NOT_FOUND':
                 this.errorMsg = 'Invalid email or password';
                 break;
