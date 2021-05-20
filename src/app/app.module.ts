@@ -16,7 +16,7 @@ import { NavComponent } from './shared/components/nav/nav.component';
 import { FormInputComponent } from './shared/components/form-input/form-input.component';
 import { FormsModule } from '@angular/forms';
 import { SameStringValidatorDirective } from './shared/validators/same-string-validator.directive';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { UsedStringValidatorDirective } from './pages/sign-up/validators/used-string-validator.directive';
 import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
 import { ButtonComponent } from './shared/components/button/button.component';
@@ -31,6 +31,7 @@ import { TabGroupComponent } from './pages/new-trip/components/tab-group/tab-gro
 import { MatListModule } from '@angular/material/list';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatRippleModule } from '@angular/material/core';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,9 @@ import { MatRippleModule } from '@angular/material/core';
     DragDropModule,
     MatRippleModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

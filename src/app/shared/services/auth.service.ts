@@ -52,7 +52,12 @@ export class AuthService {
   }
 
   private getUserData(authResponse: AuthResponse): Observable<AuthResponse> {
-    const url = this.apiUrl + 'user-info/' + authResponse.localId + '.json';
+    const url =
+      this.apiUrl +
+      'user-info/' +
+      authResponse.localId +
+      '.json?auth=' +
+      authResponse.idToken;
     return this.http.get<{ firstName: string; lastName: string }>(url).pipe(
       tap((userInfo) =>
         this.handleAuth(authResponse, userInfo.firstName, userInfo.lastName)

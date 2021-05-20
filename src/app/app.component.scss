@@ -49,3 +49,8 @@ app-footer {
 
   background-color: $primary;
 }
+@supports (-moz-appearance: none) {
+  app-footer {
+    position: static;
+  }
+}
