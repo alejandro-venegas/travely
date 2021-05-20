@@ -14,12 +14,6 @@
   height: 100vh;
 }
 
-::ng-deep {
-  router-outlet ~ .ng-animating {
-    width: 100%;
-  }
-}
-
 .spinner-backdrop {
   position: fixed;
   width: 100vw;
