@@ -1,8 +1,11 @@
 <div class="app-container" #appContainer>
   <app-header></app-header>
   <app-nav class="medium-devices--down"></app-nav>
-  <main>
-    <router-outlet (activate)="onRouterActivate(appContainer)"></router-outlet>
+  <main [@routeAnimations]="outlet.activatedRouteData">
+    <router-outlet
+      #outlet="outlet"
+      (activate)="onRouterActivate(appContainer)"
+    ></router-outlet>
   </main>
 
   <app-footer></app-footer>

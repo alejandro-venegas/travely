@@ -1,11 +1,13 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { LoadingSpinnerService } from './shared/services/loading-spinner.service';
 import { AuthService } from './shared/services/auth.service';
+import { fader } from './animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  animations: [fader],
 })
 export class AppComponent implements OnInit {
   title = 'travely';
