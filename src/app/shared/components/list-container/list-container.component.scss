@@ -1,6 +1,21 @@
+@import 'src/assets/styles/colors';
 ul {
   margin: 0;
+  padding: 0;
   li {
     list-style: none;
+  }
+}
+::ng-deep {
+  .cdk-drag-preview {
+    -webkit-box-shadow: 2px 6px 28px -3px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 2px 6px 28px -3px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 6px 28px -3px rgba(0, 0, 0, 0.5);
+    background-color: $white;
+
+    list-style: none;
+  }
+  .cdk-drag-placeholder {
+    opacity: 0;
   }
 }
