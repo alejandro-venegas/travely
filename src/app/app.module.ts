@@ -32,6 +32,9 @@ import { MatListModule } from '@angular/material/list';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatRippleModule } from '@angular/material/core';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { ListContainerComponent } from './shared/components/list-container/list-container.component';
+import { ListItemComponent } from './shared/components/list-container/list-item/list-item.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -69,6 +72,10 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     TripReviewComponent,
 
     TabGroupComponent,
+
+    ListContainerComponent,
+
+    ListItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,6 +87,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     MatListModule,
     DragDropModule,
     MatRippleModule,
+    MatCheckboxModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

@@ -1,0 +1,5 @@
+<ul cdkDropList (cdkDropListDropped)="drop($event)">
+  <li *ngFor="let todo of todoList" cdkDrag>
+    <app-list-item [todo]="todo"></app-list-item>
+  </li>
+</ul>

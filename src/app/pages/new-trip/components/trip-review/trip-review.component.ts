@@ -22,10 +22,10 @@ export class TripReviewComponent implements OnInit {
   weatherDay: WeatherDay | null = null;
   imgUrl = '';
   todoList: Todo[] = [
-    { id: '1', value: 'comprar abrigo' },
-    { id: '1', value: 'comprar guantes' },
-    { id: '1', value: 'llevar bufanda' },
-    { id: '1', value: 'huevos' },
+    { id: '1', value: 'comprar abrigo', isCompleted: false },
+    { id: '1', value: 'comprar guantes', isCompleted: false },
+    { id: '1', value: 'llevar bufanda', isCompleted: false },
+    { id: '1', value: 'huevos', isCompleted: false },
   ];
 
   @Input() set trip(trip: Trip | null) {
@@ -74,9 +74,5 @@ export class TripReviewComponent implements OnInit {
   onImageLoaded(): void {
     this.loaded.emit();
     this.loadingSpinnerService.toggleLoadingSpinner();
-  }
-
-  drop(event: CdkDragDrop<Todo[]>): void {
-    moveItemInArray(this.todoList, event.previousIndex, event.currentIndex);
   }
 }

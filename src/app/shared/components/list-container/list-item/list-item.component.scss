@@ -1,0 +1,12 @@
+:host {
+  width: 100%;
+}
+.todo-container {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+}
+mat-checkbox {
+  margin-left: auto;
+}
