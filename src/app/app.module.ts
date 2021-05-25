@@ -35,7 +35,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ListContainerComponent } from './shared/components/list-container/list-container.component';
 import { ListItemComponent } from './shared/components/list-container/list-item/list-item.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -88,6 +89,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     DragDropModule,
     MatRippleModule,
     MatCheckboxModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
