@@ -20,8 +20,8 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loadingSpinnerService.loadingSpinnerSubject.subscribe(
-      (val) => (this.isLoading = val)
+    this.loadingSpinnerService.loadingSpinnerSubject.subscribe((val) =>
+      setTimeout(() => (this.isLoading = val))
     );
     this.authService.autoLogIn();
   }
