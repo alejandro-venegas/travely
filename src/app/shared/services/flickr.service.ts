@@ -19,7 +19,7 @@ export class FlickrService {
     place = place.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const url =
       this.baseApiUrl +
-      `?method=flickr.photos.search&api_key=${environment.flickrApiKey}&text=${place}, ${country}&format=rest&sort=relevance&format=json&nojsoncallback=?&page=1&per_page=1&accuracy=6`;
+      `?method=flickr.photos.search&api_key=${environment.flickrApiKey}&text=${place} City, ${country}&format=rest&sort=relevance&format=json&nojsoncallback=?&page=1&per_page=1&accuracy=6`;
 
     return this.http
       .get<{
